@@ -50,7 +50,7 @@
                 </span>
 
                 <span class="code">
-                  <i class="error-icon"></i> 请输入17位密码
+                  <i class="error-icon"></i> 请输入9位密码
                 </span>
               </li>
               <li class="agree">
@@ -79,7 +79,7 @@
       var inp2 = document.querySelector(".inp22");
       var code = document.querySelector(".code");
       inp2.onblur = function () {
-        if (this.value.length < 17 || this.value.length > 17) {
+        if (this.value.length < 9 || this.value.length > 9) {
           code.className = "code error";
           code.innerHTML = "输入错误";
         }
