@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="denglu.css" />
+  </head>
+  <style></style>
+  <body>
+    <!--外盒子-->
+    <div class="shell">
+      <!--图片盒子-->
+      <div class="left">
+        <img src="四人.jpg" class="four" />
+      </div>
+      <!--登录页-->
+      <div class="right">
+        <!--标题栏-->
+        <div class="title">
+          <div style="flex: 1">
+            <img src="yellow fllower.png" class="img1" />
+          </div>
+          <center><h1 style="flex: 3">SIGN IN</h1></center>
+          <div style="flex: 1">
+            <img src="yellow fllower.png" class="img2" />
+          </div>
+        </div>
+
+        <!--输入栏-->
+        <div class="neirong">
+          <form action="https://heshan-yi.github.io/white-green/">
+            <ul>
+              <li>
+                <label for="">NAME:</label>
+                <input type="text" class="inp" /><br />
+                <span class="message">
+                  <i class="error-icon"></i> 请输入姓名
+                </span>
+              </li>
+              <!--密码栏-->
+              <li>
+                <label for="">CODE:</label>
+                <br />
+                <span class="inp2">
+                  <label for=""
+                    ><img src="eye-crossed.png" class="eye" id="eye"
+                  /></label>
+                  <input type="password" class="inp22" id="pwd" />
+                </span>
+
+                <span class="code">
+                  <i class="error-icon"></i> 请输入17位密码
+                </span>
+              </li>
+              <li class="agree">
+                <input type="checkbox" name="" id="" />同意协议并登录<a href="#"
+                  >《知晓WG协议》</a
+                >
+              </li>
+              <li>
+                <input type="submit" value="sign in" class="btm" />
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      //输入设置
+      var inp = document.querySelector(".inp");
+      var message = document.querySelector(".message");
+      inp.onblur = function () {
+        if (this.value.length < 3 || this.value.length > 4) {
+          message.className = "message error";
+          message.innerHTML = "输入错误";
+        }
+      };
+      var inp2 = document.querySelector(".inp22");
+      var code = document.querySelector(".code");
+      inp2.onblur = function () {
+        if (this.value.length < 17 || this.value.length > 17) {
+          code.className = "code error";
+          code.innerHTML = "输入错误";
+        }
+      };
+      //code转换
+      var eye = document.getElementById("eye");
+      var pwd = document.getElementById("pwd");
+      var flag = 0;
+      eye.onclick = function () {
+        if (flag == 0) {
+          pwd.type = "text";
+          eye.src = "eye-crossed.png";
+          flag = 1;
+        } else {
+          pwd.type = "password";
+          eye.src = "eye.png";
+          flag = 0;
+        }
+      };
+
+      //图片轮换
+    </script>
+  </body>
+</html>
